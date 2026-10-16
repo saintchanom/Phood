@@ -1,7 +1,9 @@
 import { ask, CHAT_MODEL, hasClaude, parseJson } from "@/lib/claude";
+import { findItem } from "@/lib/items";
+import { limited, tooMany } from "@/lib/ratelimit";
 
 type Body = {
-  question: string;
+  itemId: string;
   transcript: string;
   history?: { role: "coach" | "user"; text: string }[];
   round: number; // 1..2
@@ -22,9 +24,20 @@ const pick = () => FALLBACK[Math.floor(Math.random() * FALLBACK.length)];
 
 // โหมดคุยกับโค้ช: LLM ตัดสินว่าตอบเกี่ยวข้องไหม + คิดคำพูดตอบกลับจากสิ่งที่ผู้ฝึกพูดจริง (ไม่ใช้แพตเทิร์นสำเร็จรูป)
 export async function POST(req: Request) {
-  const { question, transcript, history = [], round } = (await req.json()) as Body;
+  if (limited(req, "chat", 30)) return tooMany();
+  let body: Body;
+  try { body = (await req.json()) as Body; } catch { return Response.json({ error: "bad_json" }, { status: 400 }); }
+  const item = findItem(body.itemId);
+  if (!item || item.mode !== "question") return Response.json({ error: "unknown_item" }, { status: 400 });
+  const question = item.text;
+  const round = Number(body.round) || 1;
+  // จำกัดขนาดข้อมูลที่ส่งเข้า LLM (กันค่าใช้จ่ายและการยัดคำสั่ง)
+  const history = (Array.isArray(body.history) ? body.history : []).slice(-4).map((h) => ({
+    role: h?.role === "coach" ? ("coach" as const) : ("user" as const),
+    text: String(h?.text ?? "").slice(0, 300),
+  }));
   const last = round >= 2;
-  const heard = (transcript ?? "").trim();
+  const heard = String(body.transcript ?? "").trim().slice(0, 300);
   const relevantGuess = heard.length >= 2;
   if (!hasClaude()) return Response.json({ relevant: relevantGuess, reply: pick() });
 

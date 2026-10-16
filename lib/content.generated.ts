@@ -2,116 +2,6 @@
 import type { Item } from "./types";
 export const ITEMS: Item[] = [
  {
-  "id": "L1-S1-picture-01",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ข้าว",
-  "emoji": "🍚",
-  "accept": [
-   "ข้าว"
-  ]
- },
- {
-  "id": "L1-S1-picture-02",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "น้ำ",
-  "emoji": "💧",
-  "accept": [
-   "น้ำ"
-  ]
- },
- {
-  "id": "L1-S1-picture-03",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "แมว",
-  "emoji": "🐱",
-  "accept": [
-   "แมว"
-  ]
- },
- {
-  "id": "L1-S1-picture-04",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "หมา",
-  "emoji": "🐶",
-  "accept": [
-   "หมา"
-  ]
- },
- {
-  "id": "L1-S1-picture-05",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ไก่",
-  "emoji": "🐔",
-  "accept": [
-   "ไก่"
-  ]
- },
- {
-  "id": "L1-S1-picture-06",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ปลา",
-  "emoji": "🐟",
-  "accept": [
-   "ปลา"
-  ]
- },
- {
-  "id": "L1-S1-picture-07",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "บ้าน",
-  "emoji": "🏠",
-  "accept": [
-   "บ้าน"
-  ]
- },
- {
-  "id": "L1-S1-picture-08",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "รถ",
-  "emoji": "🚗",
-  "accept": [
-   "รถ"
-  ]
- },
- {
-  "id": "L1-S1-picture-09",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "มือ",
-  "emoji": "✋",
-  "accept": [
-   "มือ"
-  ]
- },
- {
-  "id": "L1-S1-picture-10",
-  "level": 1,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ตา",
-  "emoji": "👁️",
-  "accept": [
-   "ตา"
-  ]
- },
- {
   "id": "L1-S1-sentence-01",
   "level": 1,
   "stage": 1,
@@ -159,116 +49,6 @@ export const ITEMS: Item[] = [
   "text": "ง่วงนอน",
   "accept": [
    "ง่วงนอน"
-  ]
- },
- {
-  "id": "L1-S2-picture-01",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เท้า",
-  "emoji": "🦶",
-  "accept": [
-   "เท้า"
-  ]
- },
- {
-  "id": "L1-S2-picture-02",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "หู",
-  "emoji": "👂",
-  "accept": [
-   "หู"
-  ]
- },
- {
-  "id": "L1-S2-picture-03",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ปาก",
-  "emoji": "👄",
-  "accept": [
-   "ปาก"
-  ]
- },
- {
-  "id": "L1-S2-picture-04",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "จาน",
-  "emoji": "🍽️",
-  "accept": [
-   "จาน"
-  ]
- },
- {
-  "id": "L1-S2-picture-05",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ชาม",
-  "emoji": "🥣",
-  "accept": [
-   "ชาม"
-  ]
- },
- {
-  "id": "L1-S2-picture-06",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "แก้ว",
-  "emoji": "🥛",
-  "accept": [
-   "แก้ว"
-  ]
- },
- {
-  "id": "L1-S2-picture-07",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ไข่",
-  "emoji": "🥚",
-  "accept": [
-   "ไข่"
-  ]
- },
- {
-  "id": "L1-S2-picture-08",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "กล้วย",
-  "emoji": "🍌",
-  "accept": [
-   "กล้วย"
-  ]
- },
- {
-  "id": "L1-S2-picture-09",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เตียง",
-  "emoji": "🛏️",
-  "accept": [
-   "เตียง"
-  ]
- },
- {
-  "id": "L1-S2-picture-10",
-  "level": 1,
-  "stage": 2,
-  "mode": "picture",
-  "text": "หมู",
-  "emoji": "🐷",
-  "accept": [
-   "หมู"
   ]
  },
  {
@@ -322,116 +102,6 @@ export const ITEMS: Item[] = [
   ]
  },
  {
-  "id": "L1-S3-picture-01",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ตู้เย็น",
-  "emoji": "🧊",
-  "accept": [
-   "ตู้เย็น"
-  ]
- },
- {
-  "id": "L1-S3-picture-02",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "พัดลม",
-  "emoji": "🌀",
-  "accept": [
-   "พัดลม"
-  ]
- },
- {
-  "id": "L1-S3-picture-03",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "รองเท้า",
-  "emoji": "👟",
-  "accept": [
-   "รองเท้า"
-  ]
- },
- {
-  "id": "L1-S3-picture-04",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "แว่นตา",
-  "emoji": "👓",
-  "accept": [
-   "แว่นตา"
-  ]
- },
- {
-  "id": "L1-S3-picture-05",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ประตู",
-  "emoji": "🚪",
-  "accept": [
-   "ประตู"
-  ]
- },
- {
-  "id": "L1-S3-picture-06",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "หน้าต่าง",
-  "emoji": "🪟",
-  "accept": [
-   "หน้าต่าง"
-  ]
- },
- {
-  "id": "L1-S3-picture-07",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "มะม่วง",
-  "emoji": "🥭",
-  "accept": [
-   "มะม่วง"
-  ]
- },
- {
-  "id": "L1-S3-picture-08",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "แปรงสีฟัน",
-  "emoji": "🪥",
-  "accept": [
-   "แปรงสีฟัน"
-  ]
- },
- {
-  "id": "L1-S3-picture-09",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ผ้าห่ม",
-  "emoji": "🛌",
-  "accept": [
-   "ผ้าห่ม"
-  ]
- },
- {
-  "id": "L1-S3-picture-10",
-  "level": 1,
-  "stage": 3,
-  "mode": "picture",
-  "text": "กระเป๋า",
-  "emoji": "👜",
-  "accept": [
-   "กระเป๋า"
-  ]
- },
- {
   "id": "L1-S3-sentence-01",
   "level": 1,
   "stage": 3,
@@ -479,116 +149,6 @@ export const ITEMS: Item[] = [
   "text": "เปิดพัดลมหน่อย",
   "accept": [
    "เปิดพัดลมหน่อย"
-  ]
- },
- {
-  "id": "L1-S4-picture-01",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ทีวี",
-  "emoji": "📺",
-  "accept": [
-   "ทีวี"
-  ]
- },
- {
-  "id": "L1-S4-picture-02",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "เก้าอี้",
-  "emoji": "🪑",
-  "accept": [
-   "เก้าอี้"
-  ]
- },
- {
-  "id": "L1-S4-picture-03",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "กางเกง",
-  "emoji": "👖",
-  "accept": [
-   "กางเกง"
-  ]
- },
- {
-  "id": "L1-S4-picture-04",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ตะเกียบ",
-  "emoji": "🥢",
-  "accept": [
-   "ตะเกียบ"
-  ]
- },
- {
-  "id": "L1-S4-picture-05",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "กระทะ",
-  "emoji": "🍳",
-  "accept": [
-   "กระทะ"
-  ]
- },
- {
-  "id": "L1-S4-picture-06",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ไม้กวาด",
-  "emoji": "🧹",
-  "accept": [
-   "ไม้กวาด"
-  ]
- },
- {
-  "id": "L1-S4-picture-07",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "แตงโม",
-  "emoji": "🍉",
-  "accept": [
-   "แตงโม"
-  ]
- },
- {
-  "id": "L1-S4-picture-08",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "กุญแจ",
-  "emoji": "🔑",
-  "accept": [
-   "กุญแจ"
-  ]
- },
- {
-  "id": "L1-S4-picture-09",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ดอกไม้",
-  "emoji": "🌸",
-  "accept": [
-   "ดอกไม้"
-  ]
- },
- {
-  "id": "L1-S4-picture-10",
-  "level": 1,
-  "stage": 4,
-  "mode": "picture",
-  "text": "มะพร้าว",
-  "emoji": "🥥",
-  "accept": [
-   "มะพร้าว"
   ]
  },
  {
@@ -642,116 +202,6 @@ export const ITEMS: Item[] = [
   ]
  },
  {
-  "id": "L1-S5-picture-01",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "หม้อหุงข้าว",
-  "emoji": "🍲",
-  "accept": [
-   "หม้อหุงข้าว"
-  ]
- },
- {
-  "id": "L1-S5-picture-02",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ร่ม",
-  "emoji": "☂️",
-  "accept": [
-   "ร่ม"
-  ]
- },
- {
-  "id": "L1-S5-picture-03",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "นาฬิกา",
-  "emoji": "⏰",
-  "accept": [
-   "นาฬิกา"
-  ]
- },
- {
-  "id": "L1-S5-picture-04",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ยาสีฟัน",
-  "emoji": "🪥",
-  "accept": [
-   "ยาสีฟัน"
-  ]
- },
- {
-  "id": "L1-S5-picture-05",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ไฟฉาย",
-  "emoji": "🔦",
-  "accept": [
-   "ไฟฉาย"
-  ]
- },
- {
-  "id": "L1-S5-picture-06",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "กรรไกร",
-  "emoji": "✂️",
-  "accept": [
-   "กรรไกร"
-  ]
- },
- {
-  "id": "L1-S5-picture-07",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "เตารีด",
-  "emoji": "♨️",
-  "accept": [
-   "เตารีด"
-  ]
- },
- {
-  "id": "L1-S5-picture-08",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ผ้าเช็ดตัว",
-  "emoji": "🧖",
-  "accept": [
-   "ผ้าเช็ดตัว"
-  ]
- },
- {
-  "id": "L1-S5-picture-09",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "รถเข็น",
-  "emoji": "🦽",
-  "accept": [
-   "รถเข็น"
-  ]
- },
- {
-  "id": "L1-S5-picture-10",
-  "level": 1,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ต้นไม้",
-  "emoji": "🌳",
-  "accept": [
-   "ต้นไม้"
-  ]
- },
- {
   "id": "L1-S5-sentence-01",
   "level": 1,
   "stage": 5,
@@ -799,116 +249,6 @@ export const ITEMS: Item[] = [
   "text": "ไปเดินเล่นกัน",
   "accept": [
    "ไปเดินเล่นกัน"
-  ]
- },
- {
-  "id": "L2-S1-picture-01",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ตะกร้า",
-  "emoji": "🧺",
-  "accept": [
-   "ตะกร้า"
-  ]
- },
- {
-  "id": "L2-S1-picture-02",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ตาชั่ง",
-  "emoji": "⚖️",
-  "accept": [
-   "ตาชั่ง"
-  ]
- },
- {
-  "id": "L2-S1-picture-03",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "จักรยาน",
-  "emoji": "🚲",
-  "accept": [
-   "จักรยาน"
-  ]
- },
- {
-  "id": "L2-S1-picture-04",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ไม้เท้า",
-  "emoji": "🦯",
-  "accept": [
-   "ไม้เท้า"
-  ]
- },
- {
-  "id": "L2-S1-picture-05",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ปากกา",
-  "emoji": "🖊️",
-  "accept": [
-   "ปากกา"
-  ]
- },
- {
-  "id": "L2-S1-picture-06",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "สมุด",
-  "emoji": "📓",
-  "accept": [
-   "สมุด"
-  ]
- },
- {
-  "id": "L2-S1-picture-07",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "หนังสือ",
-  "emoji": "📖",
-  "accept": [
-   "หนังสือ"
-  ]
- },
- {
-  "id": "L2-S1-picture-08",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "กระติก",
-  "emoji": "🫙",
-  "accept": [
-   "กระติก"
-  ]
- },
- {
-  "id": "L2-S1-picture-09",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "โทรศัพท์",
-  "emoji": "📱",
-  "accept": [
-   "โทรศัพท์"
-  ]
- },
- {
-  "id": "L2-S1-picture-10",
-  "level": 2,
-  "stage": 1,
-  "mode": "picture",
-  "text": "เข็มขัด",
-  "emoji": "🪢",
-  "accept": [
-   "เข็มขัด"
   ]
  },
  {
@@ -1072,116 +412,6 @@ export const ITEMS: Item[] = [
   ]
  },
  {
-  "id": "L2-S2-picture-01",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เข็มฉีดยา",
-  "emoji": "💉",
-  "accept": [
-   "เข็มฉีดยา"
-  ]
- },
- {
-  "id": "L2-S2-picture-02",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ปรอท",
-  "emoji": "🌡️",
-  "accept": [
-   "ปรอท"
-  ]
- },
- {
-  "id": "L2-S2-picture-03",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "หน้ากาก",
-  "emoji": "😷",
-  "accept": [
-   "หน้ากาก"
-  ]
- },
- {
-  "id": "L2-S2-picture-04",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เจดีย์",
-  "emoji": "🛕",
-  "accept": [
-   "เจดีย์"
-  ]
- },
- {
-  "id": "L2-S2-picture-05",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ไฟจราจร",
-  "emoji": "🚦",
-  "accept": [
-   "ไฟจราจร"
-  ]
- },
- {
-  "id": "L2-S2-picture-06",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ทางม้าลาย",
-  "emoji": "🦓",
-  "accept": [
-   "ทางม้าลาย"
-  ]
- },
- {
-  "id": "L2-S2-picture-07",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ตำรวจ",
-  "emoji": "👮",
-  "accept": [
-   "ตำรวจ"
-  ]
- },
- {
-  "id": "L2-S2-picture-08",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "พยาบาล",
-  "emoji": "👩‍⚕️",
-  "accept": [
-   "พยาบาล"
-  ]
- },
- {
-  "id": "L2-S2-picture-09",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "สะพาน",
-  "emoji": "🌉",
-  "accept": [
-   "สะพาน"
-  ]
- },
- {
-  "id": "L2-S2-picture-10",
-  "level": 2,
-  "stage": 2,
-  "mode": "picture",
-  "text": "แท็กซี่",
-  "emoji": "🚕",
-  "accept": [
-   "แท็กซี่"
-  ]
- },
- {
   "id": "L2-S2-describe-01",
   "level": 2,
   "stage": 2,
@@ -1339,116 +569,6 @@ export const ITEMS: Item[] = [
   "text": "โทรหาลูกให้หน่อย",
   "accept": [
    "โทรหาลูกให้หน่อย"
-  ]
- },
- {
-  "id": "L2-S3-picture-01",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "กิน",
-  "emoji": "🍴",
-  "accept": [
-   "กิน"
-  ]
- },
- {
-  "id": "L2-S3-picture-02",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ดื่ม",
-  "emoji": "🥤",
-  "accept": [
-   "ดื่ม"
-  ]
- },
- {
-  "id": "L2-S3-picture-03",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "นอน",
-  "emoji": "😴",
-  "accept": [
-   "นอน"
-  ]
- },
- {
-  "id": "L2-S3-picture-04",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "นั่ง",
-  "emoji": "🪑",
-  "accept": [
-   "นั่ง"
-  ]
- },
- {
-  "id": "L2-S3-picture-05",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ยืน",
-  "emoji": "🧍",
-  "accept": [
-   "ยืน"
-  ]
- },
- {
-  "id": "L2-S3-picture-06",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "เดิน",
-  "emoji": "🚶",
-  "accept": [
-   "เดิน"
-  ]
- },
- {
-  "id": "L2-S3-picture-07",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "วิ่ง",
-  "emoji": "🏃",
-  "accept": [
-   "วิ่ง"
-  ]
- },
- {
-  "id": "L2-S3-picture-08",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "อ่าน",
-  "emoji": "📖",
-  "accept": [
-   "อ่าน"
-  ]
- },
- {
-  "id": "L2-S3-picture-09",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "เขียน",
-  "emoji": "✍️",
-  "accept": [
-   "เขียน"
-  ]
- },
- {
-  "id": "L2-S3-picture-10",
-  "level": 2,
-  "stage": 3,
-  "mode": "picture",
-  "text": "หัวเราะ",
-  "emoji": "😂",
-  "accept": [
-   "หัวเราะ"
   ]
  },
  {
@@ -1612,116 +732,6 @@ export const ITEMS: Item[] = [
   ]
  },
  {
-  "id": "L2-S4-picture-01",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ล้างจาน",
-  "emoji": "🧽",
-  "accept": [
-   "ล้างจาน"
-  ]
- },
- {
-  "id": "L2-S4-picture-02",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ซักผ้า",
-  "emoji": "🧺",
-  "accept": [
-   "ซักผ้า"
-  ]
- },
- {
-  "id": "L2-S4-picture-03",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ตากผ้า",
-  "emoji": "👕",
-  "accept": [
-   "ตากผ้า"
-  ]
- },
- {
-  "id": "L2-S4-picture-04",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "กวาดบ้าน",
-  "emoji": "🧹",
-  "accept": [
-   "กวาดบ้าน"
-  ]
- },
- {
-  "id": "L2-S4-picture-05",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ทำอาหาร",
-  "emoji": "👩‍🍳",
-  "accept": [
-   "ทำอาหาร"
-  ]
- },
- {
-  "id": "L2-S4-picture-06",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ขับรถ",
-  "emoji": "🚗",
-  "accept": [
-   "ขับรถ"
-  ]
- },
- {
-  "id": "L2-S4-picture-07",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "รดน้ำ",
-  "emoji": "🪴",
-  "accept": [
-   "รดน้ำ"
-  ]
- },
- {
-  "id": "L2-S4-picture-08",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ใส่บาตร",
-  "emoji": "🙏",
-  "accept": [
-   "ใส่บาตร"
-  ]
- },
- {
-  "id": "L2-S4-picture-09",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ไหว้",
-  "emoji": "🙏",
-  "accept": [
-   "ไหว้"
-  ]
- },
- {
-  "id": "L2-S4-picture-10",
-  "level": 2,
-  "stage": 4,
-  "mode": "picture",
-  "text": "หวีผม",
-  "emoji": "💇",
-  "accept": [
-   "หวีผม"
-  ]
- },
- {
   "id": "L2-S4-describe-01",
   "level": 2,
   "stage": 4,
@@ -1882,116 +892,6 @@ export const ITEMS: Item[] = [
   ]
  },
  {
-  "id": "L2-S5-picture-01",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "รถเมล์",
-  "emoji": "🚌",
-  "accept": [
-   "รถเมล์"
-  ]
- },
- {
-  "id": "L2-S5-picture-02",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "รถไฟ",
-  "emoji": "🚆",
-  "accept": [
-   "รถไฟ"
-  ]
- },
- {
-  "id": "L2-S5-picture-03",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ตู้กับข้าว",
-  "emoji": "🗄️",
-  "accept": [
-   "ตู้กับข้าว"
-  ]
- },
- {
-  "id": "L2-S5-picture-04",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ตู้เสื้อผ้า",
-  "emoji": "🚪",
-  "accept": [
-   "ตู้เสื้อผ้า"
-  ]
- },
- {
-  "id": "L2-S5-picture-05",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ถุงเท้า",
-  "emoji": "🧦",
-  "accept": [
-   "ถุงเท้า"
-  ]
- },
- {
-  "id": "L2-S5-picture-06",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ไข่ดาว",
-  "emoji": "🍳",
-  "accept": [
-   "ไข่ดาว"
-  ]
- },
- {
-  "id": "L2-S5-picture-07",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ผ้าถุง",
-  "emoji": "👗",
-  "accept": [
-   "ผ้าถุง"
-  ]
- },
- {
-  "id": "L2-S5-picture-08",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ไม้จิ้มฟัน",
-  "emoji": "🦷",
-  "accept": [
-   "ไม้จิ้มฟัน"
-  ]
- },
- {
-  "id": "L2-S5-picture-09",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ช้อนส้อม",
-  "emoji": "🍴",
-  "accept": [
-   "ช้อนส้อม"
-  ]
- },
- {
-  "id": "L2-S5-picture-10",
-  "level": 2,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ถังขยะ",
-  "emoji": "🗑️",
-  "accept": [
-   "ถังขยะ"
-  ]
- },
- {
   "id": "L2-S5-describe-01",
   "level": 2,
   "stage": 5,
@@ -2149,116 +1049,6 @@ export const ITEMS: Item[] = [
   "text": "ขอโทษ พูดช้าๆ ได้ไหม",
   "accept": [
    "ขอโทษ พูดช้าๆ ได้ไหม"
-  ]
- },
- {
-  "id": "L3-S1-picture-01",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "กระดาษชำระ",
-  "emoji": "🧻",
-  "accept": [
-   "กระดาษชำระ"
-  ]
- },
- {
-  "id": "L3-S1-picture-02",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ไมโครเวฟ",
-  "emoji": "📟",
-  "accept": [
-   "ไมโครเวฟ"
-  ]
- },
- {
-  "id": "L3-S1-picture-03",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "เครื่องคิดเลข",
-  "emoji": "🧮",
-  "accept": [
-   "เครื่องคิดเลข"
-  ]
- },
- {
-  "id": "L3-S1-picture-04",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ไม้แขวนเสื้อ",
-  "emoji": "🪝",
-  "accept": [
-   "ไม้แขวนเสื้อ"
-  ]
- },
- {
-  "id": "L3-S1-picture-05",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "กระเป๋าสตางค์",
-  "emoji": "👛",
-  "accept": [
-   "กระเป๋าสตางค์"
-  ]
- },
- {
-  "id": "L3-S1-picture-06",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ปฏิทิน",
-  "emoji": "📅",
-  "accept": [
-   "ปฏิทิน"
-  ]
- },
- {
-  "id": "L3-S1-picture-07",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ลิปสติก",
-  "emoji": "💄",
-  "accept": [
-   "ลิปสติก"
-  ]
- },
- {
-  "id": "L3-S1-picture-08",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "ซองจดหมาย",
-  "emoji": "✉️",
-  "accept": [
-   "ซองจดหมาย"
-  ]
- },
- {
-  "id": "L3-S1-picture-09",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "สก๊อตเทป",
-  "emoji": "📼",
-  "accept": [
-   "สก๊อตเทป"
-  ]
- },
- {
-  "id": "L3-S1-picture-10",
-  "level": 3,
-  "stage": 1,
-  "mode": "picture",
-  "text": "เครื่องดูดฝุ่น",
-  "emoji": "🧹",
-  "accept": [
-   "เครื่องดูดฝุ่น"
   ]
  },
  {
@@ -2457,116 +1247,6 @@ export const ITEMS: Item[] = [
   "text": "เมื่อคืนนอนหลับดีไหมคะ"
  },
  {
-  "id": "L3-S2-picture-01",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เครื่องวัดความดัน",
-  "emoji": "🩺",
-  "accept": [
-   "เครื่องวัดความดัน"
-  ]
- },
- {
-  "id": "L3-S2-picture-02",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ไม้ค้ำยัน",
-  "emoji": "🦯",
-  "accept": [
-   "ไม้ค้ำยัน"
-  ]
- },
- {
-  "id": "L3-S2-picture-03",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ผ้าพันแผล",
-  "emoji": "🩹",
-  "accept": [
-   "ผ้าพันแผล"
-  ]
- },
- {
-  "id": "L3-S2-picture-04",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ยาหยอดตา",
-  "emoji": "💧",
-  "accept": [
-   "ยาหยอดตา"
-  ]
- },
- {
-  "id": "L3-S2-picture-05",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เครื่องช่วยฟัง",
-  "emoji": "🦻",
-  "accept": [
-   "เครื่องช่วยฟัง"
-  ]
- },
- {
-  "id": "L3-S2-picture-06",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ฟันปลอม",
-  "emoji": "🦷",
-  "accept": [
-   "ฟันปลอม"
-  ]
- },
- {
-  "id": "L3-S2-picture-07",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "เครื่องตรวจน้ำตาล",
-  "emoji": "🩸",
-  "accept": [
-   "เครื่องตรวจน้ำตาล"
-  ]
- },
- {
-  "id": "L3-S2-picture-08",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "กล้องถ่ายรูป",
-  "emoji": "📷",
-  "accept": [
-   "กล้องถ่ายรูป"
-  ]
- },
- {
-  "id": "L3-S2-picture-09",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "กระเป๋าเดินทาง",
-  "emoji": "🧳",
-  "accept": [
-   "กระเป๋าเดินทาง"
-  ]
- },
- {
-  "id": "L3-S2-picture-10",
-  "level": 3,
-  "stage": 2,
-  "mode": "picture",
-  "text": "ถังดับเพลิง",
-  "emoji": "🧯",
-  "accept": [
-   "ถังดับเพลิง"
-  ]
- },
- {
   "id": "L3-S2-describe-01",
   "level": 3,
   "stage": 2,
@@ -2760,116 +1440,6 @@ export const ITEMS: Item[] = [
   "stage": 2,
   "mode": "question",
   "text": "ตอนนี้อยู่บ้านกับใครคะ"
- },
- {
-  "id": "L3-S3-picture-01",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ร้องเพลง",
-  "emoji": "🎤",
-  "accept": [
-   "ร้องเพลง"
-  ]
- },
- {
-  "id": "L3-S3-picture-02",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ว่ายน้ำ",
-  "emoji": "🏊",
-  "accept": [
-   "ว่ายน้ำ"
-  ]
- },
- {
-  "id": "L3-S3-picture-03",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ปลูกผัก",
-  "emoji": "🥬",
-  "accept": [
-   "ปลูกผัก"
-  ]
- },
- {
-  "id": "L3-S3-picture-04",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ถักไหมพรม",
-  "emoji": "🧶",
-  "accept": [
-   "ถักไหมพรม"
-  ]
- },
- {
-  "id": "L3-S3-picture-05",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ตัดผม",
-  "emoji": "💇",
-  "accept": [
-   "ตัดผม"
-  ]
- },
- {
-  "id": "L3-S3-picture-06",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "เย็บผ้า",
-  "emoji": "🧵",
-  "accept": [
-   "เย็บผ้า"
-  ]
- },
- {
-  "id": "L3-S3-picture-07",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ล้างรถ",
-  "emoji": "🚿",
-  "accept": [
-   "ล้างรถ"
-  ]
- },
- {
-  "id": "L3-S3-picture-08",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ทาสี",
-  "emoji": "🎨",
-  "accept": [
-   "ทาสี"
-  ]
- },
- {
-  "id": "L3-S3-picture-09",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "ซื้อของ",
-  "emoji": "🛒",
-  "accept": [
-   "ซื้อของ"
-  ]
- },
- {
-  "id": "L3-S3-picture-10",
-  "level": 3,
-  "stage": 3,
-  "mode": "picture",
-  "text": "เต้นรำ",
-  "emoji": "💃",
-  "accept": [
-   "เต้นรำ"
-  ]
  },
  {
   "id": "L3-S3-describe-01",
@@ -3067,116 +1637,6 @@ export const ITEMS: Item[] = [
   "text": "ก่อนนอนทำอะไรเป็นประจำคะ"
  },
  {
-  "id": "L3-S4-picture-01",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ออกกำลังกาย",
-  "emoji": "🏋️",
-  "accept": [
-   "ออกกำลังกาย"
-  ]
- },
- {
-  "id": "L3-S4-picture-02",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "นั่งสมาธิ",
-  "emoji": "🧘",
-  "accept": [
-   "นั่งสมาธิ"
-  ]
- },
- {
-  "id": "L3-S4-picture-03",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "สวดมนต์",
-  "emoji": "📿",
-  "accept": [
-   "สวดมนต์"
-  ]
- },
- {
-  "id": "L3-S4-picture-04",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ฟังวิทยุ",
-  "emoji": "📻",
-  "accept": [
-   "ฟังวิทยุ"
-  ]
- },
- {
-  "id": "L3-S4-picture-05",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "อุ้มหลาน",
-  "emoji": "👶",
-  "accept": [
-   "อุ้มหลาน"
-  ]
- },
- {
-  "id": "L3-S4-picture-06",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ข้ามถนน",
-  "emoji": "🚸",
-  "accept": [
-   "ข้ามถนน"
-  ]
- },
- {
-  "id": "L3-S4-picture-07",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ใส่เสื้อ",
-  "emoji": "👕",
-  "accept": [
-   "ใส่เสื้อ"
-  ]
- },
- {
-  "id": "L3-S4-picture-08",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "รอคิว",
-  "emoji": "🧍",
-  "accept": [
-   "รอคิว"
-  ]
- },
- {
-  "id": "L3-S4-picture-09",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "จูงมือ",
-  "emoji": "🤝",
-  "accept": [
-   "จูงมือ"
-  ]
- },
- {
-  "id": "L3-S4-picture-10",
-  "level": 3,
-  "stage": 4,
-  "mode": "picture",
-  "text": "ล้างหน้า",
-  "emoji": "🧼",
-  "accept": [
-   "ล้างหน้า"
-  ]
- },
- {
   "id": "L3-S4-describe-01",
   "level": 3,
   "stage": 4,
@@ -3372,116 +1832,6 @@ export const ITEMS: Item[] = [
   "text": "ชอบฤดูไหนที่สุดคะ หนาว ฝน หรือร้อน"
  },
  {
-  "id": "L3-S5-picture-01",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ใบเสร็จ",
-  "emoji": "🧾",
-  "accept": [
-   "ใบเสร็จ"
-  ]
- },
- {
-  "id": "L3-S5-picture-02",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "บัตรประชาชน",
-  "emoji": "🪪",
-  "accept": [
-   "บัตรประชาชน"
-  ]
- },
- {
-  "id": "L3-S5-picture-03",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ใบสั่งยา",
-  "emoji": "📋",
-  "accept": [
-   "ใบสั่งยา"
-  ]
- },
- {
-  "id": "L3-S5-picture-04",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ใบขับขี่",
-  "emoji": "🪪",
-  "accept": [
-   "ใบขับขี่"
-  ]
- },
- {
-  "id": "L3-S5-picture-05",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ธนบัตร",
-  "emoji": "💵",
-  "accept": [
-   "ธนบัตร"
-  ]
- },
- {
-  "id": "L3-S5-picture-06",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "เหรียญ",
-  "emoji": "🪙",
-  "accept": [
-   "เหรียญ"
-  ]
- },
- {
-  "id": "L3-S5-picture-07",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ล็อตเตอรี่",
-  "emoji": "🎟️",
-  "accept": [
-   "ล็อตเตอรี่"
-  ]
- },
- {
-  "id": "L3-S5-picture-08",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ซองยา",
-  "emoji": "💊",
-  "accept": [
-   "ซองยา"
-  ]
- },
- {
-  "id": "L3-S5-picture-09",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "สายชาร์จ",
-  "emoji": "🔌",
-  "accept": [
-   "สายชาร์จ"
-  ]
- },
- {
-  "id": "L3-S5-picture-10",
-  "level": 3,
-  "stage": 5,
-  "mode": "picture",
-  "text": "ถ่าน",
-  "emoji": "🔋",
-  "accept": [
-   "ถ่าน"
-  ]
- },
- {
   "id": "L3-S5-describe-01",
   "level": 3,
   "stage": 5,
@@ -3675,5 +2025,605 @@ export const ITEMS: Item[] = [
   "stage": 5,
   "mode": "question",
   "text": "สอนวิธีทำอาหารที่ถนัดให้หน่อยค่ะ"
+ },
+ {
+  "id": "L1-S1-picture-01",
+  "level": 1,
+  "stage": 1,
+  "mode": "picture",
+  "text": "ข้าว",
+  "image": "/pictures/pn-l1-s1-01.jpg",
+  "alt": "a bowl of steamed white rice",
+  "accept": [
+   "ข้าว"
+  ]
+ },
+ {
+  "id": "L1-S1-picture-02",
+  "level": 1,
+  "stage": 1,
+  "mode": "picture",
+  "text": "น้ำ",
+  "image": "/pictures/pn-l1-s1-02.jpg",
+  "alt": "a clear glass of drinking water",
+  "accept": [
+   "น้ำ"
+  ]
+ },
+ {
+  "id": "L1-S1-picture-03",
+  "level": 1,
+  "stage": 1,
+  "mode": "picture",
+  "text": "แมว",
+  "image": "/pictures/pn-l1-s1-03.jpg",
+  "alt": "a cat sitting",
+  "accept": [
+   "แมว"
+  ]
+ },
+ {
+  "id": "L1-S1-picture-04",
+  "level": 1,
+  "stage": 1,
+  "mode": "picture",
+  "text": "หมา",
+  "image": "/pictures/pn-l1-s1-04.jpg",
+  "alt": "a dog standing",
+  "accept": [
+   "หมา"
+  ]
+ },
+ {
+  "id": "L1-S2-picture-01",
+  "level": 1,
+  "stage": 2,
+  "mode": "picture",
+  "text": "ไก่",
+  "image": "/pictures/pn-l1-s1-05.jpg",
+  "alt": "a chicken",
+  "accept": [
+   "ไก่"
+  ]
+ },
+ {
+  "id": "L1-S2-picture-02",
+  "level": 1,
+  "stage": 2,
+  "mode": "picture",
+  "text": "ปลา",
+  "image": "/pictures/pn-l1-s1-06.jpg",
+  "alt": "a single fish",
+  "accept": [
+   "ปลา"
+  ]
+ },
+ {
+  "id": "L1-S2-picture-03",
+  "level": 1,
+  "stage": 2,
+  "mode": "picture",
+  "text": "บ้าน",
+  "image": "/pictures/pn-l1-s1-07.jpg",
+  "alt": "a simple Thai house",
+  "accept": [
+   "บ้าน"
+  ]
+ },
+ {
+  "id": "L1-S3-picture-01",
+  "level": 1,
+  "stage": 3,
+  "mode": "picture",
+  "text": "รถ",
+  "image": "/pictures/pn-l1-s1-08.jpg",
+  "alt": "a small family car, side view",
+  "accept": [
+   "รถ"
+  ]
+ },
+ {
+  "id": "L1-S3-picture-02",
+  "level": 1,
+  "stage": 3,
+  "mode": "picture",
+  "text": "มือ",
+  "image": "/pictures/pn-l1-s1-09.jpg",
+  "alt": "an open adult hand, palm facing forward",
+  "accept": [
+   "มือ"
+  ]
+ },
+ {
+  "id": "L1-S3-picture-03",
+  "level": 1,
+  "stage": 3,
+  "mode": "picture",
+  "text": "ตา",
+  "image": "/pictures/pn-l1-s1-10.jpg",
+  "alt": "a single human eye",
+  "accept": [
+   "ตา"
+  ]
+ },
+ {
+  "id": "L1-S4-picture-01",
+  "level": 1,
+  "stage": 4,
+  "mode": "picture",
+  "text": "เท้า",
+  "image": "/pictures/pn-l1-s2-01.jpg",
+  "alt": "a bare adult foot, side view",
+  "accept": [
+   "เท้า"
+  ]
+ },
+ {
+  "id": "L1-S4-picture-02",
+  "level": 1,
+  "stage": 4,
+  "mode": "picture",
+  "text": "หู",
+  "image": "/pictures/pn-l1-s2-02.jpg",
+  "alt": "a human ear",
+  "accept": [
+   "หู"
+  ]
+ },
+ {
+  "id": "L1-S4-picture-03",
+  "level": 1,
+  "stage": 4,
+  "mode": "picture",
+  "text": "ปาก",
+  "image": "/pictures/pn-l1-s2-03.jpg",
+  "alt": "a smiling human mouth",
+  "accept": [
+   "ปาก"
+  ]
+ },
+ {
+  "id": "L1-S4-picture-04",
+  "level": 1,
+  "stage": 4,
+  "mode": "picture",
+  "text": "จาน",
+  "image": "/pictures/pn-l1-s2-04.jpg",
+  "alt": "an empty round dinner plate",
+  "accept": [
+   "จาน"
+  ]
+ },
+ {
+  "id": "L1-S5-picture-01",
+  "level": 1,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ชาม",
+  "image": "/pictures/pn-l1-s2-05.jpg",
+  "alt": "an empty deep bowl",
+  "accept": [
+   "ชาม"
+  ]
+ },
+ {
+  "id": "L1-S5-picture-02",
+  "level": 1,
+  "stage": 5,
+  "mode": "picture",
+  "text": "แก้ว",
+  "image": "/pictures/pn-l1-s2-06.jpg",
+  "alt": "an empty drinking glass",
+  "accept": [
+   "แก้ว"
+  ]
+ },
+ {
+  "id": "L1-S5-picture-03",
+  "level": 1,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ไข่",
+  "image": "/pictures/pn-l1-s2-07.jpg",
+  "alt": "a single whole chicken egg",
+  "accept": [
+   "ไข่"
+  ]
+ },
+ {
+  "id": "L2-S1-picture-01",
+  "level": 2,
+  "stage": 1,
+  "mode": "picture",
+  "text": "กล้วย",
+  "image": "/pictures/pn-l1-s2-08.jpg",
+  "alt": "a bunch of yellow bananas",
+  "accept": [
+   "กล้วย"
+  ]
+ },
+ {
+  "id": "L2-S1-picture-02",
+  "level": 2,
+  "stage": 1,
+  "mode": "picture",
+  "text": "เตียง",
+  "image": "/pictures/pn-l1-s2-09.jpg",
+  "alt": "a simple single bed with a pillow",
+  "accept": [
+   "เตียง"
+  ]
+ },
+ {
+  "id": "L2-S1-picture-03",
+  "level": 2,
+  "stage": 1,
+  "mode": "picture",
+  "text": "หมู",
+  "image": "/pictures/pn-l1-s2-10.jpg",
+  "alt": "a pig",
+  "accept": [
+   "หมู"
+  ]
+ },
+ {
+  "id": "L2-S2-picture-01",
+  "level": 2,
+  "stage": 2,
+  "mode": "picture",
+  "text": "ตู้เย็น",
+  "image": "/pictures/pn-l1-s3-01.jpg",
+  "alt": "a two-door refrigerator",
+  "accept": [
+   "ตู้เย็น"
+  ]
+ },
+ {
+  "id": "L2-S2-picture-02",
+  "level": 2,
+  "stage": 2,
+  "mode": "picture",
+  "text": "พัดลม",
+  "image": "/pictures/pn-l1-s3-02.jpg",
+  "alt": "a standing electric fan",
+  "accept": [
+   "พัดลม"
+  ]
+ },
+ {
+  "id": "L2-S2-picture-03",
+  "level": 2,
+  "stage": 2,
+  "mode": "picture",
+  "text": "รองเท้า",
+  "image": "/pictures/pn-l1-s3-03.jpg",
+  "alt": "a pair of simple shoes",
+  "accept": [
+   "รองเท้า"
+  ]
+ },
+ {
+  "id": "L2-S2-picture-04",
+  "level": 2,
+  "stage": 2,
+  "mode": "picture",
+  "text": "แว่นตา",
+  "image": "/pictures/pn-l1-s3-04.jpg",
+  "alt": "a pair of eyeglasses",
+  "accept": [
+   "แว่นตา"
+  ]
+ },
+ {
+  "id": "L2-S3-picture-01",
+  "level": 2,
+  "stage": 3,
+  "mode": "picture",
+  "text": "ประตู",
+  "image": "/pictures/pn-l1-s3-05.jpg",
+  "alt": "a closed wooden door",
+  "accept": [
+   "ประตู"
+  ]
+ },
+ {
+  "id": "L2-S3-picture-02",
+  "level": 2,
+  "stage": 3,
+  "mode": "picture",
+  "text": "หน้าต่าง",
+  "image": "/pictures/pn-l1-s3-06.jpg",
+  "alt": "an open window",
+  "accept": [
+   "หน้าต่าง"
+  ]
+ },
+ {
+  "id": "L2-S3-picture-03",
+  "level": 2,
+  "stage": 3,
+  "mode": "picture",
+  "text": "มะม่วง",
+  "image": "/pictures/pn-l1-s3-07.jpg",
+  "alt": "a single ripe yellow mango",
+  "accept": [
+   "มะม่วง"
+  ]
+ },
+ {
+  "id": "L2-S4-picture-01",
+  "level": 2,
+  "stage": 4,
+  "mode": "picture",
+  "text": "แปรงสีฟัน",
+  "image": "/pictures/pn-l1-s3-08.jpg",
+  "alt": "a single toothbrush",
+  "accept": [
+   "แปรงสีฟัน"
+  ]
+ },
+ {
+  "id": "L2-S4-picture-02",
+  "level": 2,
+  "stage": 4,
+  "mode": "picture",
+  "text": "ผ้าห่ม",
+  "image": "/pictures/pn-l1-s3-09.jpg",
+  "alt": "a folded blanket",
+  "accept": [
+   "ผ้าห่ม"
+  ]
+ },
+ {
+  "id": "L2-S4-picture-03",
+  "level": 2,
+  "stage": 4,
+  "mode": "picture",
+  "text": "กระเป๋า",
+  "image": "/pictures/pn-l1-s3-10.jpg",
+  "alt": "a simple handbag",
+  "accept": [
+   "กระเป๋า"
+  ]
+ },
+ {
+  "id": "L2-S5-picture-01",
+  "level": 2,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ทีวี",
+  "image": "/pictures/pn-l1-s4-01.jpg",
+  "alt": "a flat-screen television with a blank screen",
+  "accept": [
+   "ทีวี"
+  ]
+ },
+ {
+  "id": "L2-S5-picture-02",
+  "level": 2,
+  "stage": 5,
+  "mode": "picture",
+  "text": "เก้าอี้",
+  "image": "/pictures/pn-l1-s4-02.jpg",
+  "alt": "a simple wooden chair",
+  "accept": [
+   "เก้าอี้"
+  ]
+ },
+ {
+  "id": "L2-S5-picture-03",
+  "level": 2,
+  "stage": 5,
+  "mode": "picture",
+  "text": "กางเกง",
+  "image": "/pictures/pn-l1-s4-03.jpg",
+  "alt": "a pair of long trousers",
+  "accept": [
+   "กางเกง"
+  ]
+ },
+ {
+  "id": "L2-S5-picture-04",
+  "level": 2,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ตะเกียบ",
+  "image": "/pictures/pn-l1-s4-04.jpg",
+  "alt": "a pair of chopsticks",
+  "accept": [
+   "ตะเกียบ"
+  ]
+ },
+ {
+  "id": "L3-S1-picture-01",
+  "level": 3,
+  "stage": 1,
+  "mode": "picture",
+  "text": "กระทะ",
+  "image": "/pictures/pn-l1-s4-05.jpg",
+  "alt": "an empty frying pan",
+  "accept": [
+   "กระทะ"
+  ]
+ },
+ {
+  "id": "L3-S1-picture-02",
+  "level": 3,
+  "stage": 1,
+  "mode": "picture",
+  "text": "ไม้กวาด",
+  "image": "/pictures/pn-l1-s4-06.jpg",
+  "alt": "a Thai soft broom",
+  "accept": [
+   "ไม้กวาด"
+  ]
+ },
+ {
+  "id": "L3-S1-picture-03",
+  "level": 3,
+  "stage": 1,
+  "mode": "picture",
+  "text": "แตงโม",
+  "image": "/pictures/pn-l1-s4-07.jpg",
+  "alt": "a slice of watermelon",
+  "accept": [
+   "แตงโม"
+  ]
+ },
+ {
+  "id": "L3-S2-picture-01",
+  "level": 3,
+  "stage": 2,
+  "mode": "picture",
+  "text": "กุญแจ",
+  "image": "/pictures/pn-l1-s4-08.jpg",
+  "alt": "a single metal key",
+  "accept": [
+   "กุญแจ"
+  ]
+ },
+ {
+  "id": "L3-S2-picture-02",
+  "level": 3,
+  "stage": 2,
+  "mode": "picture",
+  "text": "ดอกไม้",
+  "image": "/pictures/pn-l1-s4-09.jpg",
+  "alt": "a single blooming flower with a stem",
+  "accept": [
+   "ดอกไม้"
+  ]
+ },
+ {
+  "id": "L3-S2-picture-03",
+  "level": 3,
+  "stage": 2,
+  "mode": "picture",
+  "text": "มะพร้าว",
+  "image": "/pictures/pn-l1-s4-10.jpg",
+  "alt": "a whole green coconut",
+  "accept": [
+   "มะพร้าว"
+  ]
+ },
+ {
+  "id": "L3-S3-picture-01",
+  "level": 3,
+  "stage": 3,
+  "mode": "picture",
+  "text": "หม้อหุงข้าว",
+  "image": "/pictures/pn-l1-s5-01.jpg",
+  "alt": "an electric rice cooker",
+  "accept": [
+   "หม้อหุงข้าว"
+  ]
+ },
+ {
+  "id": "L3-S3-picture-02",
+  "level": 3,
+  "stage": 3,
+  "mode": "picture",
+  "text": "ร่ม",
+  "image": "/pictures/pn-l1-s5-02.jpg",
+  "alt": "an open umbrella",
+  "accept": [
+   "ร่ม"
+  ]
+ },
+ {
+  "id": "L3-S3-picture-03",
+  "level": 3,
+  "stage": 3,
+  "mode": "picture",
+  "text": "นาฬิกา",
+  "image": "/pictures/pn-l1-s5-03.jpg",
+  "alt": "a round analog wall clock",
+  "accept": [
+   "นาฬิกา"
+  ]
+ },
+ {
+  "id": "L3-S3-picture-04",
+  "level": 3,
+  "stage": 3,
+  "mode": "picture",
+  "text": "ยาสีฟัน",
+  "image": "/pictures/pn-l1-s5-04.jpg",
+  "alt": "a tube of toothpaste",
+  "accept": [
+   "ยาสีฟัน"
+  ]
+ },
+ {
+  "id": "L3-S4-picture-01",
+  "level": 3,
+  "stage": 4,
+  "mode": "picture",
+  "text": "ไฟฉาย",
+  "image": "/pictures/pn-l1-s5-05.jpg",
+  "alt": "a handheld flashlight shining a beam",
+  "accept": [
+   "ไฟฉาย"
+  ]
+ },
+ {
+  "id": "L3-S4-picture-02",
+  "level": 3,
+  "stage": 4,
+  "mode": "picture",
+  "text": "กรรไกร",
+  "image": "/pictures/pn-l1-s5-06.jpg",
+  "alt": "a pair of scissors",
+  "accept": [
+   "กรรไกร"
+  ]
+ },
+ {
+  "id": "L3-S4-picture-03",
+  "level": 3,
+  "stage": 4,
+  "mode": "picture",
+  "text": "เตารีด",
+  "image": "/pictures/pn-l1-s5-07.jpg",
+  "alt": "an electric clothes iron",
+  "accept": [
+   "เตารีด"
+  ]
+ },
+ {
+  "id": "L3-S5-picture-01",
+  "level": 3,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ผ้าเช็ดตัว",
+  "image": "/pictures/pn-l1-s5-08.jpg",
+  "alt": "a folded bath towel",
+  "accept": [
+   "ผ้าเช็ดตัว"
+  ]
+ },
+ {
+  "id": "L3-S5-picture-02",
+  "level": 3,
+  "stage": 5,
+  "mode": "picture",
+  "text": "รถเข็น",
+  "image": "/pictures/pn-l1-s5-09.jpg",
+  "alt": "an empty wheelchair",
+  "accept": [
+   "รถเข็น"
+  ]
+ },
+ {
+  "id": "L3-S5-picture-03",
+  "level": 3,
+  "stage": 5,
+  "mode": "picture",
+  "text": "ต้นไม้",
+  "image": "/pictures/pn-l1-s5-10.jpg",
+  "alt": "a single leafy tree",
+  "accept": [
+   "ต้นไม้"
+  ]
  }
 ];

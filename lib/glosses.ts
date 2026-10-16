@@ -1,0 +1,60 @@
+// คำแปลภาษาอังกฤษ (+ คำอ่านโรมัน) ของเนื้อหาฝึกพูดภาษาไทย — แสดงเป็นตัวช่วยเมื่อผู้ใช้เลือกอินเทอร์เฟซภาษาอังกฤษ
+// เนื้อหาที่ต้องพูด/เฉลย/เสียงยังเป็นภาษาไทยเสมอ  รูปแบบ: ข้อความไทย → [English, romanization?]
+type G = [en: string, roman?: string];
+
+export const GLOSS: Record<string, G> = {
+  // รูปภาพ
+  ข้าว: ["rice", "khao"], น้ำ: ["water", "nam"], แมว: ["cat", "maeo"], หมา: ["dog", "ma"], ไก่: ["chicken", "kai"], ปลา: ["fish", "pla"],
+  บ้าน: ["house", "ban"], รถ: ["car", "rot"], มือ: ["hand", "mue"], ตา: ["eye", "ta"], เท้า: ["foot", "thao"], หู: ["ear", "hu"],
+  ปาก: ["mouth", "pak"], จาน: ["plate", "chan"], ชาม: ["bowl", "cham"], แก้ว: ["glass", "kaeo"], ไข่: ["egg", "khai"], กล้วย: ["banana", "kluai"],
+  เตียง: ["bed", "tiang"], หมู: ["pig", "mu"], ตู้เย็น: ["refrigerator", "tu yen"], พัดลม: ["fan", "phat lom"], รองเท้า: ["shoes", "rong thao"],
+  แว่นตา: ["glasses", "waen ta"], ประตู: ["door", "pratu"], หน้าต่าง: ["window", "natang"], มะม่วง: ["mango", "mamuang"],
+  แปรงสีฟัน: ["toothbrush", "praeng si fan"], ผ้าห่ม: ["blanket", "pha hom"], กระเป๋า: ["bag", "krapao"], ทีวี: ["television", "thi wi"],
+  เก้าอี้: ["chair", "kao-i"], กางเกง: ["trousers", "kangkeng"], ตะเกียบ: ["chopsticks", "takiap"], กระทะ: ["frying pan", "kratha"],
+  ไม้กวาด: ["broom", "mai kwat"], แตงโม: ["watermelon", "taeng mo"], กุญแจ: ["key", "kunchae"], ดอกไม้: ["flower", "dok mai"],
+  มะพร้าว: ["coconut", "maphrao"], หม้อหุงข้าว: ["rice cooker", "mo hung khao"], ร่ม: ["umbrella", "rom"], นาฬิกา: ["clock / watch", "nalika"],
+  ยาสีฟัน: ["toothpaste", "ya si fan"], ไฟฉาย: ["flashlight", "fai chai"], กรรไกร: ["scissors", "kankrai"], เตารีด: ["iron", "tao rit"],
+  ผ้าเช็ดตัว: ["towel", "pha chet tua"], รถเข็น: ["wheelchair", "rot khen"], ต้นไม้: ["tree", "ton mai"],
+  ห้องสมุด: ["library", "hong samut"],
+  // ประโยค
+  หิวข้าว: ["I'm hungry."], ขอน้ำ: ["Water, please."], ปวดหัว: ["I have a headache."], เข้าห้องน้ำ: ["I need the toilet."], ง่วงนอน: ["I'm sleepy."],
+  ร้อน: ["It's hot."], หนาว: ["It's cold."], ขอบคุณ: ["Thank you."], ไม่เอา: ["No, thanks."], เหนื่อย: ["I'm tired."],
+  อยากกินผลไม้: ["I'd like some fruit."], ขอน้ำหน่อย: ["Some water, please."], ปวดท้องมาก: ["My stomach really hurts."], อยากนอนแล้ว: ["I want to go to bed now."],
+  เปิดพัดลมหน่อย: ["Please turn on the fan."], ช่วยด้วย: ["Help!"], กินยาแล้ว: ["I've taken my medicine."], ไปหาหมอ: ["Going to see the doctor."],
+  ดีใจมาก: ["I'm so happy."], คิดถึงหลาน: ["I miss my grandchild."], เปิดทีวีหน่อย: ["Please turn on the TV."], ปิดไฟหน่อย: ["Please turn off the light."],
+  ขอผ้าห่มหน่อย: ["A blanket, please."], อยากอาบน้ำ: ["I'd like to take a shower."], ไปเดินเล่นกัน: ["Let's go for a walk."],
+  วันนี้กินอะไรดี: ["What shall we eat today?"], ลูกกลับมาแล้วเหรอ: ["Is my child back already?"], ช่วยหยิบแว่นให้หน่อย: ["Please pass me my glasses."],
+  ข้าวอร่อยมากเลย: ["The rice is delicious."], อยากดูละครหลังข่าว: ["I want to watch the drama after the news."], หลานไปโรงเรียนหรือยัง: ["Has my grandchild gone to school yet?"],
+  ช่วยเปิดประตูให้หน่อย: ["Please open the door for me."], "ฝนตกแล้ว เก็บผ้าด้วย": ["It's raining, bring in the laundry."], พรุ่งนี้ไปวัดกัน: ["Let's go to the temple tomorrow."],
+  โทรหาลูกให้หน่อย: ["Please call my child."], ไปตลาดกันเถอะ: ["Let's go to the market."], อันนี้ราคาเท่าไหร่: ["How much is this?"],
+  ขอถุงใบใหญ่หน่อย: ["A big bag, please."], ไปโรงพยาบาล: ["Going to the hospital."], จอดตรงนี้เลย: ["Stop right here."], มาตามนัดหมอ: ["I'm here for my doctor's appointment."],
+  "ยาหมดแล้ว ขอเพิ่มหน่อย": ["I've run out of medicine, a refill please."], ขอซื้อธูปเทียนหน่อย: ["I'd like to buy incense and candles."], ทอนเงินด้วยนะ: ["Please give me change."],
+  วันนี้คนเยอะจังเลย: ["It's so crowded today."], ห้องน้ำอยู่ตรงไหน: ["Where is the toilet?"], ช่วยพาไปขึ้นรถหน่อย: ["Please help me get to the car."],
+  รถเมล์สายนี้ไปไหน: ["Where does this bus go?"], ช่วยอ่านฉลากยาให้หน่อย: ["Please read the medicine label for me."], "ขอโทษ พูดช้าๆ ได้ไหม": ["Sorry, could you speak slowly?"],
+  ช่วยเปิดแอร์ให้เย็นขึ้นหน่อย: ["Please make the air-con cooler."], รบกวนส่งจานข้าวให้หน่อย: ["Could you pass the plate of rice?"],
+  ขอเลื่อนนัดเป็นวันพรุ่งนี้ได้ไหม: ["Can I move the appointment to tomorrow?"], ช่วยปรับเตียงให้สูงขึ้นหน่อย: ["Please raise the bed a little."],
+  ขอน้ำอุ่นสักแก้วได้ไหม: ["Could I have a glass of warm water?"], ช่วยโทรเรียกแท็กซี่ให้หน่อย: ["Please call a taxi for me."], รบกวนช่วยถือของให้หน่อย: ["Could you help carry this?"],
+  ขอนั่งตรงนี้ได้ไหม: ["May I sit here?"], ช่วยเปิดเสียงทีวีให้ดังขึ้นหน่อย: ["Please turn the TV volume up."], ขอดูเมนูอาหารหน่อยได้ไหม: ["May I see the menu?"],
+  เมื่อคืนนอนไม่หลับทั้งคืนเลย: ["I couldn't sleep all night."], ขาข้างขวายังไม่ค่อยมีแรง: ["My right leg is still weak."], วันนี้อยากกินอาหารรสไม่จัด: ["I'd like mild food today."],
+  "พูดไม่ค่อยชัด ช่วยฟังช้าๆ หน่อย": ["My speech isn't clear, please listen patiently."], ลืมเอายามาจากบ้าน: ["I forgot to bring my medicine from home."],
+  ยาตัวนี้กินแล้วรู้สึกเวียนหัว: ["This medicine makes me dizzy."], อยากไปเยี่ยมหลานที่ต่างจังหวัด: ["I want to visit my grandchild upcountry."],
+  ช่วยจดเบอร์โทรลูกไว้ให้หน่อย: ["Please write down my child's phone number."], "มือถือแบตหมด ขอยืมสายชาร์จหน่อย": ["My phone is dead, may I borrow a charger?"],
+  "ไม่ค่อยเข้าใจ ช่วยอธิบายอีกครั้ง": ["I don't quite understand, please explain again."], "อยากไปตลาด แต่ฝนตกหนักมาก": ["I want to go to the market, but it's raining hard."],
+  หิวมากเพราะยังไม่ได้กินตั้งแต่เช้า: ["I'm very hungry, I haven't eaten since morning."], "กินยาแล้ว และวัดความดันแล้วด้วย": ["I've taken my medicine and checked my blood pressure."],
+  "อยากพูดให้ชัด เลยฝึกทุกวัน": ["I want to speak clearly, so I practise every day."], "พรุ่งนี้ไปหาหมอ เพราะนัดไว้แล้ว": ["I'm seeing the doctor tomorrow, I have an appointment."],
+  ขอยา: ["Medicine, please."], เจ็บมือ: ["My hand hurts."], วันนี้ฝนจะตกไหม: ["Will it rain today?"], ช่วยปิดหน้าต่างให้หน่อย: ["Please close the window."],
+  รบกวนช่วยพาไปห้องน้ำหน่อย: ["Could you help take me to the toilet?"],
+  // คำถามโค้ช
+  ชอบกาแฟหรือชาคะ: ["Do you prefer coffee or tea?"], วันนี้อากาศร้อนไหมคะ: ["Is it hot today?"], ชอบกินเผ็ดไหมคะ: ["Do you like spicy food?"],
+  ชอบดูทีวีหรือฟังวิทยุคะ: ["Do you prefer TV or radio?"], เมื่อคืนนอนหลับดีไหมคะ: ["Did you sleep well last night?"], คุณชื่ออะไรคะ: ["What is your name?"],
+  บ้านเกิดอยู่จังหวัดไหนคะ: ["Which province are you from?"], มีลูกกี่คนคะ: ["How many children do you have?"], เคยทำงานอะไรมาคะ: ["What work did you do?"],
+  ตอนนี้อยู่บ้านกับใครคะ: ["Who do you live with now?"], ปกติตื่นนอนกี่โมงคะ: ["What time do you usually wake up?"], ตอนเช้าชอบทำอะไรคะ: ["What do you like to do in the morning?"],
+  มื้อเที่ยงวันนี้กินอะไรคะ: ["What did you have for lunch today?"], ตอนเย็นทำอะไรบ้างคะ: ["What do you do in the evening?"], ก่อนนอนทำอะไรเป็นประจำคะ: ["What do you usually do before bed?"],
+  อาหารจานโปรดคืออะไรคะ: ["What is your favourite dish?"], ชอบเที่ยวทะเลหรือภูเขาคะ: ["Do you prefer the sea or the mountains?"], ชอบฟังเพลงแบบไหนคะ: ["What kind of music do you like?"],
+  ผลไม้ที่ชอบที่สุดคืออะไรคะ: ["What is your favourite fruit?"], "ชอบฤดูไหนที่สุดคะ หนาว ฝน หรือร้อน": ["Which season do you like most: cool, rainy or hot?"],
+  เล่าเรื่องวันหยุดที่ประทับใจให้ฟังหน่อย: ["Tell me about a holiday you remember fondly."], "ตอนเด็กๆ ชอบเล่นอะไรคะ": ["What did you like to play as a child?"],
+  เล่าถึงคนในครอบครัวให้ฟังหน่อยค่ะ: ["Tell me about your family."], "ถ้ามีเวลาว่าง อยากทำอะไรคะ": ["If you had free time, what would you like to do?"],
+  สอนวิธีทำอาหารที่ถนัดให้หน่อยค่ะ: ["Teach me how to cook your best dish."], ชอบกินข้าวกับอะไรคะ: ["What do you like to eat with rice?"], เมื่อเช้ากินอะไรมาคะ: ["What did you eat this morning?"],
+};
+
+export const glossOf = (thai: string): G | undefined => GLOSS[thai];

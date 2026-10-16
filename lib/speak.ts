@@ -1,9 +1,34 @@
-// เล่นเสียง: ไฟล์ในเครื่อง (public/audio/<id>.mp3) → /api/tts (Gemini/ElevenLabs) → เสียงไทยของเบราว์เซอร์
+// เล่นเสียง: ไฟล์ในเครื่อง (public/audio/<sha1-16>.wav) → /api/tts (Gemini/ElevenLabs) → เสียงไทยของเบราว์เซอร์
 // ใช้ Web Audio API (ปลดล็อกตอนผู้ใช้แตะครั้งแรก) เพราะ Safari บล็อก audio.play() ที่เกิดหลังรอ fetch
 let ctx: AudioContext | null = null;
 let currentSource: AudioBufferSourceNode | null = null;
 const bufferCache = new Map<string, AudioBuffer>();
-let ttsBlockedUntil = 0; // 503 = ไม่มี key → ปิดถาวร · error อื่น → พัก 60 วินาที
+let gen = 0; // เพิ่มทุกครั้งที่หยุด/เริ่มพูดใหม่ — เสียงที่โหลดเสร็จช้ากว่านี้จะถูกทิ้ง ไม่เล่นทับ
+let ttsBlockedUntil = 0; // 503 = ไม่มี key → ปิดถาวร · 429 → พัก 5 นาที · error อื่น → พัก 15 วินาที
+
+// ผู้ฟังสถานะเสียง: true = เบราว์เซอร์บล็อกเสียง (ยังไม่ได้แตะหน้าจอ/ถูกระงับ) → UI แสดงปุ่ม "แตะเพื่อเปิดเสียง"
+const blockedListeners = new Set<(blocked: boolean) => void>();
+export function onAudioBlocked(cb: (blocked: boolean) => void): () => void {
+  blockedListeners.add(cb);
+  return () => { blockedListeners.delete(cb); };
+}
+const notifyBlocked = (b: boolean) => blockedListeners.forEach((cb) => cb(b));
+
+/** เรียกจากการแตะของผู้ใช้โดยตรง: ปลดล็อก/ปลุก AudioContext แล้วบอกว่าเล่นเสียงได้หรือยัง */
+export async function unlockAudio(): Promise<boolean> {
+  const c = getCtx();
+  if (!c) return false;
+  await c.resume().catch(() => {});
+  try {
+    const s = c.createBufferSource();
+    s.buffer = c.createBuffer(1, 1, 22050);
+    s.connect(c.destination);
+    s.start(0);
+  } catch {}
+  const ok = c.state === "running";
+  if (ok) notifyBlocked(false);
+  return ok;
+}
 
 export type SpeakSource = "file" | "api" | "browser" | "none";
 export let lastSource: SpeakSource = "none";
@@ -81,6 +106,7 @@ async function loadFile(text: string): Promise<AudioBuffer | null> {
   const key = `file:${text}`;
   const hit = bufferCache.get(key);
   if (hit) return hit;
+  if (typeof crypto === "undefined" || !crypto.subtle) return null; // ต้องใช้ https หรือ localhost
   try {
     const r = await fetch(`/audio/${await fileName(text)}.wav`);
     if (!r.ok) return null;
@@ -98,7 +124,7 @@ async function loadTts(text: string): Promise<AudioBuffer | null> {
   try {
     const r = await fetch("/api/tts", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) });
     if (!r.ok) {
-      ttsBlockedUntil = r.status === 503 ? Infinity : Date.now() + (r.status === 429 ? 10 * 60_000 : 60_000);
+      ttsBlockedUntil = r.status === 503 ? Infinity : Date.now() + (r.status === 429 ? 5 * 60_000 : 15_000);
       console.warn("[speak] /api/tts", r.status);
       return null;
     }
@@ -107,36 +133,45 @@ async function loadTts(text: string): Promise<AudioBuffer | null> {
     else console.warn("[speak] ถอดรหัสเสียงจาก /api/tts ไม่ได้");
     return b;
   } catch (e) {
-    ttsBlockedUntil = Date.now() + 60_000;
+    ttsBlockedUntil = Date.now() + 15_000;
     console.warn("[speak] /api/tts error", e);
     return null;
   }
 }
 
-export async function speak(text: string, _opts: { id?: string } = {}): Promise<void> {
+export async function speak(text: string, _opts: { id?: string } = {}): Promise<void> { // eslint-disable-line @typescript-eslint/no-unused-vars
   if (!text.trim()) return;
   stopSpeaking();
+  const g = gen;
   const fromFile = await loadFile(text);
-  if (fromFile && (await playBuffer(fromFile))) { lastSource = "file"; return; }
-  const fromApi = await loadTts(text);
-  if (fromApi && (await playBuffer(fromApi))) { lastSource = "api"; return; }
-  if (fromApi) console.warn("[speak] เสียงจาก API ยังเล่นไม่ได้ (เบราว์เซอร์ยังไม่ปลดล็อกเสียง) — แตะหน้าจอหนึ่งครั้งแล้วลองใหม่");
+  if (g !== gen) return;
+  if (fromFile && (await playBuffer(fromFile))) { lastSource = "file"; notifyBlocked(false); return; }
+  // มีไฟล์เสียงแต่เล่นไม่ได้ = เบราว์เซอร์ยังบล็อกเสียง ไม่ต้องเสียโควตาเรียก API ซ้ำ
+  const fromApi = fromFile ? null : await loadTts(text);
+  if (g !== gen) return;
+  if (fromApi && (await playBuffer(fromApi))) { lastSource = "api"; notifyBlocked(false); return; }
+  if (fromFile || fromApi) {
+    console.warn("[speak] เสียงยังเล่นไม่ได้ (เบราว์เซอร์ยังไม่ปลดล็อกเสียง) — ให้ผู้ใช้แตะปุ่มเปิดเสียง");
+    notifyBlocked(true);
+  }
+  if (g !== gen) return;
   lastSource = "browser";
   await browserSpeak(text);
 }
 
 export function stopSpeaking() {
+  gen++;
   try { currentSource?.stop(); } catch {}
   currentSource = null;
   if (typeof speechSynthesis !== "undefined") speechSynthesis.cancel();
 }
 
 /** ตรวจว่าเบราว์เซอร์นี้พูดไทยได้ไหม (ใช้แสดงคำเตือน) */
-export function speechSupport(): { ok: boolean; reason?: string } {
-  if (typeof speechSynthesis === "undefined") return { ok: false, reason: "เบราว์เซอร์นี้ไม่มีเสียงพูด ให้เปิดแอปใน Safari หรือ Chrome" };
+export function speechSupport(): { ok: boolean; reason?: { th: string; en: string } } {
+  if (typeof speechSynthesis === "undefined") return { ok: false, reason: { th: "เบราว์เซอร์นี้ไม่มีเสียงพูด ให้เปิดแอปใน Safari หรือ Chrome", en: "This browser has no speech output. Open the app in Safari or Chrome." } };
   const voices = speechSynthesis.getVoices();
   if (voices.length && !voices.some((x) => x.lang.toLowerCase().startsWith("th"))) {
-    return { ok: false, reason: "เครื่องนี้ยังไม่มีเสียงภาษาไทย (ติดตั้งได้ที่ การตั้งค่าระบบ → การช่วยการเข้าถึง → เนื้อหาที่พูด)" };
+    return { ok: false, reason: { th: "เครื่องนี้ยังไม่มีเสียงภาษาไทย (ติดตั้งได้ที่ การตั้งค่าระบบ → การช่วยการเข้าถึง → เนื้อหาที่พูด)", en: "This device has no Thai voice installed (System Settings → Accessibility → Spoken Content)." } };
   }
   return { ok: true };
 }

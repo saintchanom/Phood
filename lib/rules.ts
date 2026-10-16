@@ -23,7 +23,12 @@ export type StageOutcome = "advance" | "levelup" | "finished" | "retry" | "demot
 export function applyStageResult(p: Progress, results: ItemResult[]): { next: Progress; outcome: StageOutcome; pct: number } {
   const s = stagePercent(results);
   const passed = s.counted > 0 && s.pct >= 0.8;
-  const repeatIds = Array.from(new Set([...p.repeatIds, ...results.filter((r) => r.status === "practiced").map((r) => r.id)]));
+  // ข้อที่ตอบถูกแล้วออกจากรายการทำซ้ำ · ข้อที่ฝึกพูดตามเข้ารายการ
+  const solved = new Set(results.filter((r) => r.status === "correct").map((r) => r.id));
+  const repeatIds = Array.from(new Set([
+    ...p.repeatIds.filter((id) => !solved.has(id)),
+    ...results.filter((r) => r.status === "practiced").map((r) => r.id),
+  ]));
   const history = [...p.history, { at: Date.now(), level: p.level, stage: p.stage, pct: s.pct, passed }];
   const next: Progress = { ...p, repeatIds, history };
   let outcome: StageOutcome;

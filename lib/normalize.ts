@@ -1,4 +1,5 @@
-const FILLERS = /(ครับ|ค่ะ|คะ|คับ|นะคะ|นะครับ|นะ|จ้ะ|จ้า|ด้วย|หน่อย|เลย|สิ)/g;
+// ตัดเฉพาะคำลงท้ายท้ายประโยค (ไม่ตัดกลางคำ เช่น ชนะ สิงโต คะแนน)
+const FILLERS = /(นะคะ|นะครับ|ครับ|ค่ะ|คะ|คับ|นะ|จ้ะ|จ้า|ด้วย|หน่อย|เลย|สิ)+$/;
 
 export function normalize(s: string): string {
   return s
@@ -39,6 +40,10 @@ export function exactMatch(transcript: string, accept: string[]): boolean {
   const tf = stripFillers(transcript);
   return accept.some((a) => {
     const n = normalize(a);
-    return n === t || stripFillers(a) === tf || (tf.length > 0 && tf.includes(stripFillers(a)) && stripFillers(a).length >= 2);
+    const af = stripFillers(a);
+    if (n === t || af === tf) return true;
+    // คำตอบอยู่ในประโยคที่พูด: ต้องไม่ยาวเกินไปและไม่มีคำปฏิเสธ (เช่น "ไม่ใช่นม")
+    const negated = tf.includes("ไม่") && !af.includes("ไม่");
+    return af.length >= 2 && tf.includes(af) && tf.length <= af.length * 2 + 2 && !negated;
   });
 }

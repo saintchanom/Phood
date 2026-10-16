@@ -39,7 +39,12 @@ async function geminiOnce(model: string, system: string, user: string, maxTokens
       }),
     });
   let res = await call(true);
-  if (res.status === 400) res = await call(false);
+  if (res.status === 400) {
+    // ลองใหม่แบบไม่ใส่ thinkingConfig เฉพาะเมื่อโมเดลไม่รองรับ (400 จาก key ผิดไม่ต้องลองซ้ำ)
+    const err = await res.text();
+    if (!/thinking/i.test(err)) throw new Error(`gemini ${model} 400`);
+    res = await call(false);
+  }
   if (!res.ok) throw new Error(`gemini ${model} ${res.status}`);
   const data = (await res.json()) as { candidates?: { content?: { parts?: { text?: string }[] } }[] };
   const text = (data.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? "").join("");

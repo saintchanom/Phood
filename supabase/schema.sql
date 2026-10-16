@@ -15,6 +15,8 @@ create table progress (
   fail_streak int not null default 0,
   completed boolean not null default false,
   repeat_item_ids text[] not null default '{}',
+  placed boolean not null default false,
+  history jsonb not null default '[]',
   updated_at timestamptz default now()
 );
 
@@ -35,3 +37,9 @@ create table item_results (
   attempts int not null default 1,
   transcript text
 );
+
+-- เปิด RLS ทุกตาราง (ไม่มี policy = anon key เข้าไม่ได้) — เพิ่ม policy ผูกกับ auth.uid() ตอนย้ายมาใช้จริง
+alter table profiles enable row level security;
+alter table progress enable row level security;
+alter table sessions enable row level security;
+alter table item_results enable row level security;

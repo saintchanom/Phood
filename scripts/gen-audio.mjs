@@ -10,8 +10,13 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = path.join(root, "public/audio");
 fs.mkdirSync(outDir, { recursive: true });
 
+const envPath = path.join(root, ".env.local");
+if (!fs.existsSync(envPath)) {
+  console.error("ไม่พบ .env.local — คัดลอกจาก .env.example แล้วใส่คีย์ก่อน");
+  process.exit(1);
+}
 const env = Object.fromEntries(
-  fs.readFileSync(path.join(root, ".env.local"), "utf8").split("\n")
+  fs.readFileSync(envPath, "utf8").split("\n")
     .filter((l) => /^[A-Z_]+=/.test(l)).map((l) => { const i = l.indexOf("="); return [l.slice(0, i), l.slice(i + 1).trim().split(/\s+/)[0]]; }),
 );
 const PROVIDER = env.TTS_PROVIDER || (env.ELEVENLABS_API_KEY ? "elevenlabs" : "gemini");
@@ -36,17 +41,32 @@ const phrases = ["เก่งมาก!", "ถูกต้อง เยี่�
   "แอปนี้ใช้ไมค์ฟังเสียงของคุณ เพื่อตรวจคำตอบ เราไม่เก็บไฟล์เสียงไว้ ถ้าตกลง กดปุ่มสีน้ำเงิน"];
 
 const placementSrc = fs.readFileSync(path.join(root, "lib/placement.ts"), "utf8");
-const placement = [...placementSrc.matchAll(/mode: "(\w+)", text: "([^"]+)"(?:, emoji: "[^"]+")?(?:, description: "([^"]+)")?/g)]
+const placement = [...placementSrc.matchAll(/mode: "(\w+)", text: "([^"]+)"(?:, image: "[^"]+", alt: "[^"]+")?(?:, description: "([^"]+)")?/g)]
   .map((m) => ({ mode: m[1], text: m[2], description: m[3] }));
 
 const genSrc = fs.readFileSync(path.join(root, "lib/content.generated.ts"), "utf8");
 const items = JSON.parse(genSrc.slice(genSrc.indexOf("= [") + 2).replace(/;\s*$/, ""));
+
+// ---- คำใบ้ 3 ขั้น (ตรงกับ cuesFor ใน lib/cues.ts) ----
+const firstSound = (w) => { const m = w.match(/^[เแโใไ]?([ก-ฮ][ะาิีึืุูั็่้๊๋์]*)/); return m ? m[1] : w.slice(0, 1); };
+const cueSpeech = (it) => {
+  switch (it.mode) {
+    case "picture": return [firstSound(it.text), it.text];
+    case "describe": return [firstSound(it.text), it.text];
+    case "sentence": return [it.text, it.text.slice(0, Math.max(2, Math.ceil(it.text.length / 2)))];
+    default: return [];
+  }
+};
+const cuePhrases = ["นึกถึงตอนที่เราเห็นหรือใช้สิ่งนี้ที่บ้านนะ", "ตอบสั้นๆ แค่คำเดียวก็ได้นะ", "ไม่มีคำตอบผิด เล่าเท่าที่นึกออกได้เลยนะ"];
 
 const ordered = [
   ...phrases,
   ...placement.map(speech),
   ...items.filter((i) => i.level === 1 && i.stage === 1).map(speech),
   ...items.map(speech),
+  ...cuePhrases,
+  ...placement.flatMap(cueSpeech),
+  ...items.flatMap(cueSpeech),
 ].filter(Boolean);
 const texts = [...new Set(ordered)];
 

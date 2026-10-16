@@ -8,7 +8,10 @@ export type Item = {
   mode: Mode;
   /** picture: คำตอบ · describe: คำตอบ (คำอธิบายอยู่ใน description) · sentence: ประโยค · question: คำถาม */
   text: string;
-  emoji?: string;
+  /** picture: พาธรูปใน public/ (ถ้ายังไม่มีรูป ข้อนี้จะไม่ถูกนำมาใช้) */
+  image?: string;
+  /** คำบรรยายรูป (alt) */
+  alt?: string;
   description?: string;
   accept?: string[];
 };

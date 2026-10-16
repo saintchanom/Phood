@@ -2,35 +2,36 @@
 // รัน: node scripts/build-content.mjs
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const src = path.resolve(here, "../../product/content-bank.md");
 const out = path.resolve(here, "../lib/content.generated.ts");
 
-const EMOJI = {
-  ข้าว: "🍚", น้ำ: "💧", แมว: "🐱", หมา: "🐶", ไก่: "🐔", ปลา: "🐟", บ้าน: "🏠", รถ: "🚗", มือ: "✋", ตา: "👁️",
-  เท้า: "🦶", หู: "👂", ปาก: "👄", จาน: "🍽️", ชาม: "🥣", แก้ว: "🥛", ไข่: "🥚", กล้วย: "🍌", เตียง: "🛏️", หมู: "🐷",
-  ตู้เย็น: "🧊", พัดลม: "🌀", รองเท้า: "👟", แว่นตา: "👓", ประตู: "🚪", หน้าต่าง: "🪟", มะม่วง: "🥭", แปรงสีฟัน: "🪥",
-  ผ้าห่ม: "🛌", กระเป๋า: "👜", ทีวี: "📺", เก้าอี้: "🪑", กางเกง: "👖", ตะเกียบ: "🥢", กระทะ: "🍳", ไม้กวาด: "🧹",
-  แตงโม: "🍉", กุญแจ: "🔑", ดอกไม้: "🌸", มะพร้าว: "🥥", หม้อหุงข้าว: "🍲", ร่ม: "☂️", นาฬิกา: "⏰", ยาสีฟัน: "🪥",
-  ไฟฉาย: "🔦", กรรไกร: "✂️", เตารีด: "♨️", ผ้าเช็ดตัว: "🧖", รถเข็น: "🦽", ต้นไม้: "🌳",
-  ตะกร้า: "🧺", ตาชั่ง: "⚖️", จักรยาน: "🚲", ไม้เท้า: "🦯", ปากกา: "🖊️", สมุด: "📓", หนังสือ: "📖", กระติก: "🫙",
-  โทรศัพท์: "📱", เข็มขัด: "🪢", เข็มฉีดยา: "💉", ปรอท: "🌡️", หน้ากาก: "😷", เจดีย์: "🛕", ไฟจราจร: "🚦",
-  ทางม้าลาย: "🦓", ตำรวจ: "👮", พยาบาล: "👩‍⚕️", สะพาน: "🌉", แท็กซี่: "🚕", กิน: "🍴", ดื่ม: "🥤", นอน: "😴",
-  นั่ง: "🪑", ยืน: "🧍", เดิน: "🚶", วิ่ง: "🏃", อ่าน: "📖", เขียน: "✍️", หัวเราะ: "😂", ล้างจาน: "🧽", ซักผ้า: "🧺",
-  ตากผ้า: "👕", กวาดบ้าน: "🧹", ทำอาหาร: "👩‍🍳", ขับรถ: "🚗", รดน้ำ: "🪴", ใส่บาตร: "🙏", ไหว้: "🙏", หวีผม: "💇",
-  รถเมล์: "🚌", รถไฟ: "🚆", ตู้กับข้าว: "🗄️", ตู้เสื้อผ้า: "🚪", ถุงเท้า: "🧦", ไข่ดาว: "🍳", ผ้าถุง: "👗",
-  ไม้จิ้มฟัน: "🦷", ช้อนส้อม: "🍴", ถังขยะ: "🗑️",
-  กระดาษชำระ: "🧻", ไมโครเวฟ: "📟", เครื่องคิดเลข: "🧮", ไม้แขวนเสื้อ: "🪝", กระเป๋าสตางค์: "👛", ปฏิทิน: "📅",
-  ลิปสติก: "💄", ซองจดหมาย: "✉️", สก๊อตเทป: "📼", เครื่องดูดฝุ่น: "🧹", เครื่องวัดความดัน: "🩺", ไม้ค้ำยัน: "🦯",
-  ผ้าพันแผล: "🩹", ยาหยอดตา: "💧", เครื่องช่วยฟัง: "🦻", ฟันปลอม: "🦷", เครื่องตรวจน้ำตาล: "🩸",
-  กล้องถ่ายรูป: "📷", กระเป๋าเดินทาง: "🧳", ถังดับเพลิง: "🧯", ร้องเพลง: "🎤", ว่ายน้ำ: "🏊", ปลูกผัก: "🥬",
-  ถักไหมพรม: "🧶", ตัดผม: "💇", เย็บผ้า: "🧵", ล้างรถ: "🚿", ทาสี: "🎨", ซื้อของ: "🛒", เต้นรำ: "💃",
-  ออกกำลังกาย: "🏋️", นั่งสมาธิ: "🧘", สวดมนต์: "📿", ฟังวิทยุ: "📻", อุ้มหลาน: "👶", ข้ามถนน: "🚸",
-  ใส่เสื้อ: "👕", รอคิว: "🧍", จูงมือ: "🤝", ล้างหน้า: "🧼", ใบเสร็จ: "🧾", บัตรประชาชน: "🪪", ใบสั่งยา: "📋",
-  ใบขับขี่: "🪪", ธนบัตร: "💵", เหรียญ: "🪙", ล็อตเตอรี่: "🎟️", ซองยา: "💊", สายชาร์จ: "🔌", ถ่าน: "🔋",
-};
+// รูปภาพ: อ่านจากโฟลเดอร์ picture_naming_level<N>_colorful (ชื่อไฟล์ pn-l<L>-s<S>-<NN>_<คำ>.png + image_prompts.json)
+// ย่อเป็น JPEG 640px ไว้ที่ public/pictures/<item id>.jpg แล้วผูกกับข้อ picture ที่ level/stage/ลำดับตรงกัน
+const root = path.resolve(here, "..");
+const picDir = path.join(root, "public/pictures");
+fs.mkdirSync(picDir, { recursive: true });
+// ชื่อไฟล์ (l1/s1…) ไม่ได้บอกระดับจริง — ใช้เป็นแค่ลำดับความยากง่าย แล้วกระจายรูปทั้งหมดไปยังระดับ 1–3 / ด่าน 1–5
+const PICS = []; // { key, image, alt, word }
+for (const dir of fs.readdirSync(root).filter((d) => /^picture_naming_level\d+_colorful$/.test(d))) {
+  const prompts = {};
+  const pj = path.join(root, dir, "image_prompts.json");
+  if (fs.existsSync(pj)) for (const p of JSON.parse(fs.readFileSync(pj, "utf8"))) prompts[p.id] = p;
+  for (const f of fs.readdirSync(path.join(root, dir))) {
+    const m = f.match(/^pn-l(\d)-s(\d)-(\d\d)_(.+)\.png$/);
+    if (!m) continue;
+    const id = `pn-l${m[1]}-s${m[2]}-${m[3]}`;
+    const dest = path.join(picDir, `${id}.jpg`);
+    if (!fs.existsSync(dest)) {
+      execFileSync("sips", ["-Z", "640", "-s", "format", "jpeg", "-s", "formatOptions", "80", path.join(root, dir, f), "--out", dest], { stdio: "ignore" });
+    }
+    const subject = prompts[`pn-l${m[1]}-s${m[2]}-${m[3]}`]?.image_prompt?.match(/Subject: (.*?)\. Color direction/)?.[1];
+    PICS.push({ key: `${m[1]}${m[2]}${m[3]}`, image: `/pictures/${id}.jpg`, alt: subject ?? m[4], word: m[4] });
+  }
+}
 
 const DESC = {
   หมอน: "ใช้หนุนหัวตอนนอน", ผ้าม่าน: "แขวนที่หน้าต่าง ไว้บังแดดและบังตา", กระจก: "ใช้ส่องดูหน้าตัวเอง",
@@ -78,7 +79,7 @@ const MODE = { รูปภาพ: "picture", "รูปภาพ (คำกร�
 const lines = fs.readFileSync(src, "utf8").split("\n");
 let level = 0, stage = 0;
 const items = [];
-const missing = { emoji: [], desc: [] };
+const missing = { images: [], desc: [] };
 const counters = {};
 for (const raw of lines) {
   const l = raw.trim();
@@ -88,6 +89,7 @@ for (const raw of lines) {
   if (!(m = l.match(/^- ([^:]+): (.+)$/))) continue;
   const mode = MODE[m[1].trim()];
   if (!mode || !level || !stage) continue;
+  if (mode === "picture") continue; // ข้อรูปภาพสร้างจากไฟล์รูปด้านล่าง
   let body = m[2].replace(/\s*\*\(.*\)\*\s*$/, "").trim();
   let words;
   if (mode === "picture" || mode === "describe") words = body.split(/\s+/);
@@ -95,15 +97,11 @@ for (const raw of lines) {
   if (level === 3 && stage === 4 && mode === "question") {
     words = words.map((w) => w.replace(/ชอบหน้าไหนที่สุดคะ.*$/, "ชอบฤดูไหนที่สุดคะ หนาว ฝน หรือร้อน"));
   }
-  words.forEach((w, i) => {
+  words.forEach((w) => {
     const key = `L${level}-S${stage}-${mode}`;
     counters[key] = (counters[key] ?? 0) + 1;
     const item = { id: `${key}-${String(counters[key]).padStart(2, "0")}`, level, stage, mode, text: w };
-    if (mode === "picture") {
-      item.emoji = EMOJI[w] ?? "🖼️";
-      if (!EMOJI[w]) missing.emoji.push(w);
-      item.accept = [w];
-    } else if (mode === "describe") {
+    if (mode === "describe") {
       item.description = DESC[w] ?? "";
       if (!DESC[w]) missing.desc.push(w);
       item.accept = [w];
@@ -114,11 +112,21 @@ for (const raw of lines) {
   });
 }
 
+// กระจายรูปทั้งหมดไปยัง 15 ด่าน (3 ระดับ × 5 ด่าน) ตามลำดับความยากง่าย
+PICS.sort((a, b) => a.key.localeCompare(b.key));
+PICS.forEach((p, rank) => {
+  const k = Math.floor((rank * 15) / PICS.length);
+  const lv = Math.floor(k / 5) + 1, st = (k % 5) + 1;
+  const key = `L${lv}-S${st}-picture`;
+  counters[key] = (counters[key] ?? 0) + 1;
+  items.push({ id: `${key}-${String(counters[key]).padStart(2, "0")}`, level: lv, stage: st, mode: "picture", text: p.word, image: p.image, alt: p.alt, accept: [p.word] });
+});
+
 const header = `// สร้างโดย scripts/build-content.mjs จาก product/content-bank.md — อย่าแก้ด้วยมือ
 import type { Item } from "./types";
 export const ITEMS: Item[] = `;
 fs.writeFileSync(out, header + JSON.stringify(items, null, 1) + ";\n");
 const byLevel = [1, 2, 3].map((n) => items.filter((i) => i.level === n).length);
 console.log("items:", items.length, "by level:", byLevel.join("/"));
-if (missing.emoji.length) console.log("no emoji:", missing.emoji.join(", "));
+console.log("pictures:", PICS.length);
 if (missing.desc.length) console.log("no description:", missing.desc.join(", "));
