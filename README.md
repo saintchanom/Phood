@@ -30,3 +30,4 @@ npm run dev                  # http://localhost:3000
 - `lib/store.ts` เก็บ progress ใน localStorage แยกตามผู้ใช้ · `supabase/schema.sql` เตรียมไว้ย้ายฐานข้อมูล
 # Phood
 # Phood
+# Phood
